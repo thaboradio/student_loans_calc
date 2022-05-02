@@ -1,0 +1,34 @@
+<div class="calculator-content">
+    <div class="calculator-form">
+        <h1>Student Loan Calculator (Simple Daily Interest)</h1>
+        <form [formGroup]="calculatorForm">
+            <div class="control-row">
+                <label for="amount_borrowed">Amount</label>
+                R<input type="text" formControlName="amount_borrowed"><br>
+            </div>
+            <div class="control-row">
+                <label for="">Term</label>
+                <input type="range" #termSelector formControlName="payment_term" value="0" min="0" max="5" step="1"
+                    [(ngModel)]="term" (ngModelChange)="setRangeValue($event)">
+                    <span class="range-value">{{term}} year(s)</span><br>
+            </div>
+
+            <div class="control-row">
+                <label for="">Interest Rate</label>
+                <input type="text" formControlName="interest_rate" required="required"><br>
+            </div>
+
+            <a class="calculate-button" href="javascript: void(0)" (click)="displayRepayment()">Calculate</a>
+
+            <div class="control-row">
+                
+            </div>
+            <div class="control-row">
+                Monthly Installments: <span class="monthlyInstallment">{{repaymentObj.MonthlyInstallment}}</span><br>
+                Total Annual Interest: <span class="annualInterest">{{repaymentObj.TotalInterestPerAnnum}}</span><br>
+                Total Amount with Interest: <span class="totalWithInterest">{{repaymentObj.TotalPlusInterest}}</span><br>
+                Monthly Interest: <span class="monthlyInterest">{{repaymentObj.TotalMonthlyInterest}}</span><br>
+            </div>
+        </form>
+    </div>
+</div>

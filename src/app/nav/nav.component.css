@@ -1,0 +1,24 @@
+.nav-container{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background: #f5f5f5;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+.nav{
+    display: inline;
+}
+
+.nav-items{
+    display: block;
+    float: left;
+    padding: 20px 10px;
+}
+
+.nav-items:hover{
+    background: #89c146;
+}
